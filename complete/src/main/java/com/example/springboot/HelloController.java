@@ -28,7 +28,7 @@ public class HelloController {
 	@GetMapping("/nasa")
 	public String nasa(@RequestParam(name="id", required=false) String id, Model model) {
 		if(id==null){
-			id=java.time.LocalDateTime.now();
+			id=java.time.LocalDateTime.now().toString();
 		}
 		model.addAttribute("id", id);
 		return "nasa";
